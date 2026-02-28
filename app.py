@@ -63,7 +63,7 @@ def prendi_previsioni(citta, api_key):
         return lista_previsioni
     return None
 
-@st.cache_data(ttl=600)
+@st.cache_data(ttl=600,show_spinner=False)
 def chiamata(city, temp, desc):
     prompt=f"Sei un pappagallo simpatico. A {city} ci sono {temp} gradi e il tempo è {desc}. Commenta brevemente il tempo"
     try:
