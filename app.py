@@ -45,6 +45,9 @@ if st.button("Controlla Meteo") or citta:
             else:
                 st.error("Città non trovata. Riprova!")
         with st.chat_message("assistant", avatar="🦜"):
-            st.write(ans_gem)
+            if res.status_code == 200:
+                st.write(ans_gem)
+            else:
+                st.error("Il pappagallo è scappato. Riprova!")
     else:
         st.warning("Per favore, inserisci il nome di una città.")
